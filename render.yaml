@@ -13,8 +13,9 @@ services:
         value: production
 
   # Frontend Static Site
-  - type: static
+  - type: web
     name: spamshield-frontend
+    runtime: static
     buildCommand: cd frontend && npm install && npm run build
     staticPublishPath: frontend/dist
     envVars:
