@@ -1,0 +1,67 @@
+[
+    {
+        "text": "Check out this amazing new product! Click here http://spam-link.com to win a free iPhone!",
+        "retweet_count": 5,
+        "user": {
+            "followers_count": 10,
+            "listed_count": 0,
+            "friends_count": 500,
+            "favourites_count": 0,
+            "statuses_count": 100,
+            "screen_name": "FreeiPhoneWinner",
+            "created_at": "Mon Nov 29 21:18:15 +0000 2024"
+        }
+    },
+    {
+        "text": "Just had a great coffee at the downtown cafe. #morning #coffee",
+        "retweet_count": 12,
+        "user": {
+            "followers_count": 150,
+            "listed_count": 5,
+            "friends_count": 120,
+            "favourites_count": 300,
+            "statuses_count": 450,
+            "screen_name": "CoffeeLover99",
+            "created_at": "Sun Jan 10 10:00:00 +0000 2023"
+        }
+    },
+    {
+        "text": "Looking for some help with Python data science libraries. Any recommendations?",
+        "retweet_count": 2,
+        "user": {
+            "followers_count": 800,
+            "listed_count": 20,
+            "friends_count": 400,
+            "favourites_count": 1200,
+            "statuses_count": 2000,
+            "screen_name": "DevJane",
+            "created_at": "Wed Mar 15 14:30:00 +0000 2022"
+        }
+    },
+    {
+        "text": "BUY BITCOIN NOW !!! CHEAP PRICE !!! CONTACT ME FOR DETAILS !!!",
+        "retweet_count": 100,
+        "user": {
+            "followers_count": 5,
+            "listed_count": 0,
+            "friends_count": 2000,
+            "favourites_count": 0,
+            "statuses_count": 50,
+            "screen_name": "CryptoBot_X",
+            "created_at": "Fri Dec 01 00:00:00 +0000 2024"
+        }
+    },
+    {
+        "text": "Beautiful sunset today.",
+        "retweet_count": 45,
+        "user": {
+            "followers_count": 3000,
+            "listed_count": 150,
+            "friends_count": 500,
+            "favourites_count": 8000,
+            "statuses_count": 12000,
+            "screen_name": "NaturePics",
+            "created_at": "Tue Jun 20 18:45:00 +0000 2020"
+        }
+    }
+]
