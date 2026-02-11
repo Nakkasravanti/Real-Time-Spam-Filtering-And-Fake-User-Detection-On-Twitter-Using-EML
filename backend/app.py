@@ -9,6 +9,14 @@ CORS(app, resources={r"/*": {"origins": "*"}})
 ml_service = MLService()
 
 
+@app.route('/')
+def home():
+    return jsonify({"message": "Spam Shield AI Backend is running", "status": "healthy"})
+
+@app.route('/api/health')
+def health():
+    return jsonify({"status": "ok"})
+
 UPLOAD_FOLDER = 'uploads'
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 
