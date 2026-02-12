@@ -42,20 +42,21 @@ def predict_text():
 
 @app.route('/api/analyze', methods=['POST'])
 def analyze_folder():
-    # In a real app, handle file upload. For now, we point to the existing 'tweets' folder or uploaded zip
-    # Assuming the user processes the default 'tweets' folder for demo, or uploads a path
-    # If using local file system access like in original:
+    print("DEBUG: Received analyze request")
     folder_path = request.json.get('path', 'tweets') 
-    # Ensure absolute path resolution if needed
     if not os.path.isabs(folder_path):
         folder_path = os.path.join(os.getcwd(), folder_path)
     
+    print(f"DEBUG: Analyzing path: {folder_path}")
     result = ml_service.analyze_folder(folder_path)
+    print("DEBUG: Analysis complete")
     return jsonify(result)
 
 @app.route('/api/train/<algorithm>', methods=['POST'])
 def train_model(algorithm):
+    print(f"DEBUG: Received train request for {algorithm}")
     result = ml_service.train_predict(algorithm)
+    print(f"DEBUG: Training complete for {algorithm}")
     return jsonify(result)
 
 @app.route('/api/results', methods=['GET'])
