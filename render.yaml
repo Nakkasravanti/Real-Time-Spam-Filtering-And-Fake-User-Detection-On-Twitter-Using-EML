@@ -1,33 +1,16 @@
 services:
-  # Backend Python Service
+  # Unified Web Service (Backend + Frontend)
   - type: web
-    name: spamshield-backend
+    name: spamshield-unified
     runtime: python
     plan: free
-    buildCommand: pip install -r backend/requirements.txt && python -m nltk.downloader stopwords
+    buildCommand: |
+      cd frontend && npm install && npm run build && cd ..
+      pip install -r backend/requirements.txt
+      python -m nltk.downloader stopwords
     startCommand: gunicorn --chdir backend app:app -b 0.0.0.0:$PORT --timeout 300 --workers 1
     envVars:
       - key: PYTHON_VERSION
         value: 3.10.0
       - key: FLASK_ENV
         value: production
-
-  # Frontend Static Site
-  - type: web
-    name: spamshield-frontend
-    runtime: static
-    buildCommand: cd frontend && npm install && npm run build
-    staticPublishPath: frontend/dist
-    envVars:
-      - key: VITE_API_BASE
-        fromService:
-          type: web
-          name: spamshield-backend
-          property: host
-    routes:
-      - type: rewrite
-        source: /api/*
-        destination: http://spamshield-backend:10000/api/*
-      - type: rewrite
-        source: /*
-        destination: /index.html
